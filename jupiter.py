@@ -11,5 +11,8 @@ class Moons:
 
         self.data = data
 
-        pass
+        def extract(self, moon_name):
+            return self.data.loc[data["moon"] == moon_name]
+
+
 
