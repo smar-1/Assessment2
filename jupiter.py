@@ -16,6 +16,9 @@ class Moons:
     def extract(self, moon_name):
         return self.data.loc[self.data["moon"] == moon_name]
 
+    def correlation(self, x_var, y_var):
+        return self.data[x_var].corr(self.data[y_var])
+
     def plot(self, x_var, y_var):
         sns.relplot(self.data, x=x_var, y=y_var)
         pass
