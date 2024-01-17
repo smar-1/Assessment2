@@ -22,3 +22,18 @@ class Moons:
     def plot(self, x_var, y_var):
         sns.relplot(self.data, x=x_var, y=y_var)
         pass
+
+    def max_col(self, col):
+        return self.data[col].max()
+
+    def min_col(self, col):
+        return self.data[col].min()
+
+    def mean_col(self, col):
+        return self.data[col].mean()
+
+    def sd_col(self, col):
+        return self.data[col].std()
+
+    def full_summary(self):
+        return self.data.describe()
