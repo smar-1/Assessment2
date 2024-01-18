@@ -8,6 +8,13 @@ from sklearn.metrics import r2_score, mean_squared_error
 
 class Moons:
     def __init__(self):
+        self.estimated_mass_jupiter = None
+        self.test_predict_y = None
+        self.model_y = None
+        self.y_test = None
+        self.y_train = None
+        self.x_test = None
+        self.x_train = None
         database_service = "sqlite"
         database = "jupiter.db"
         connectable = f"{database_service}:///{database}"
