@@ -48,7 +48,6 @@ class Moons:
         self.data['T_sq'] = (self.data['period_days'] * 86400) ** 2
         self.data['a_cu'] = (self.data['distance_km'] * 1000) ** 3
 
-
         X = self.data[['T_sq']]
         Y = self.data['a_cu']
 
@@ -57,3 +56,12 @@ class Moons:
         self.model_y = linear_model.LinearRegression(fit_intercept=True)
         self.model_y.fit(self.x_train, self.y_train)
         return self.model_y
+
+    def testing(self):
+        self.test_predict_y = self.model_y.predict(self.x_test)
+        return r2_score(self.y_test, self.test_predict_y)
+
+    def predict(self):
+        G = 6.67e-11
+        self.estimated_mass_jupiter = (4 * np.pi ** 2 / G) * self.model_y.coef_[0]
+        return self.estimated_mass_jupiter
