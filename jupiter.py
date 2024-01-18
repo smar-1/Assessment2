@@ -9,7 +9,6 @@ from sklearn.metrics import r2_score, mean_squared_error
 class Moons:
     def __init__(self):
         self.estimated_mass_jupiter = None
-        self.test_predict_y = None
         self.model_y = None
         self.y_test = None
         self.y_train = None
@@ -65,8 +64,8 @@ class Moons:
         return self.model_y
 
     def testing(self):
-        self.test_predict_y = self.model_y.predict(self.x_test)
-        return r2_score(self.y_test, self.test_predict_y)
+        test_predict_y = self.model_y.predict(self.x_test)
+        return r2_score(self.y_test, test_predict_y)
 
     def predict(self):
         G = 6.67e-11
