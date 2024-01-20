@@ -28,7 +28,7 @@ class Moons:
     def extract_col(self, col_name):
         return self.data[col_name]
 
-    def correlation(self, full, x_var, y_var):
+    def correlation(self, full, x_var=None, y_var=None):
         if full:
             return self.data.corr()
         elif not full:
