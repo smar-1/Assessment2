@@ -50,6 +50,10 @@ class Moons:
     def full_summary(self):
         return self.data.describe()
 
+    def information(self):
+        self.data.info()
+        pass
+
     def training(self):
         self.data['T_sq'] = (self.data['period_days'] * 86400) ** 2
         self.data['a_cu'] = (self.data['distance_km'] * 1000) ** 3
