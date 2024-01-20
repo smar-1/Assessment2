@@ -28,8 +28,11 @@ class Moons:
     def extract_col(self, col_name):
         return self.data[col_name]
 
-    def correlation(self, x_var, y_var):
-        return self.data[x_var].corr(self.data[y_var])
+    def correlation(self, full, x_var, y_var):
+        if full:
+            return self.data.corr()
+        elif not full:
+            return self.data[x_var].corr(self.data[y_var])
 
     def plot(self, x_var, y_var):
         sns.relplot(data=self.data, x=x_var, y=y_var)
