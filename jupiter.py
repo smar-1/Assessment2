@@ -54,6 +54,10 @@ class Moons:
         self.data.info()
         pass
 
+    def show(self):
+        print(self.data)
+        pass
+
     def training(self):
         self.data['T_sq'] = (self.data['period_days'] * 86400) ** 2
         self.data['a_cu'] = (self.data['distance_km'] * 1000) ** 3
