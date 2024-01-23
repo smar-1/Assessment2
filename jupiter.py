@@ -38,6 +38,9 @@ class Moons:
         sns.relplot(data=self.data, x=x_var, y=y_var)
         pass
 
+    def peek(self, rows):
+        return self.data.head(rows)
+
     def max_col(self, col):
         return self.data[col].max()
 
